@@ -37,14 +37,23 @@ export default async (req, res) => {
 
     // Nome	Email	Whatsapp	Cupom	Promo
     await sheet.addRow({
-      Nome: data.nome,
+      Nome: data.name,
       Email: data.email,
       Whatsapp: data.whatsapp,
       "Data Preenchimento": format(new Date(), "dd/MM/yyyy HH:mm:ss aaaa"),
       Cupom: Cupom,
       Promo: Promo,
-      Nota: data.nota,
+      Nota: data.note,
     });
+
+    // Dados que serão retornados quando realizarmos o metodo post na api: /api/save
+    res.end(
+      JSON.stringify({
+        showCoupon: Cupom !== "",
+        Cupom,
+        Promo,
+      })
+    );
   } catch (err) {}
   res.end("error");
 };
