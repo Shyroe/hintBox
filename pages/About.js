@@ -1,9 +1,11 @@
 import React from "react";
 import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 
 export default () => {
   return (
     <div className="flex-col justify-center items-center w-1/2 text-center bg-teal-300">
+      <PageTitle title="Sobre" />
       <h1 className="mb-4">About Page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam

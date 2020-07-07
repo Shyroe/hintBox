@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from "react";
+import PageTitle from "../components/PageTitle";
 
 export default () => {
   const [form, setForm] = useState({
@@ -58,6 +59,7 @@ export default () => {
   };
   return (
     <div className="flex flex-col w-1/2 text-center">
+      <PageTitle title="Pesquisa" />
       <h1 className="font-bold text-xl capitalize">Críticas e sugestões</h1>
       <p className="my-4">
         O restaurante X sempre busca por atender melhor seus clientes. <br />
